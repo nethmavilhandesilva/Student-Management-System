@@ -5,10 +5,10 @@
             
                 <div class="card">
                     <div class="card-header">
-                        <h2>Student Application</h2>
+                        <h2>Teachers Application</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/students/create') }}" class="btn btn-success btn-sm" title="Add New Student">
+                        <a href="{{ url('/teachers/create') }}" class="btn btn-success btn-sm" title="Add New Student">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br/>
@@ -25,7 +25,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($students as $item)
+                                @foreach($teachers as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->name }}</td>
@@ -33,13 +33,13 @@
                                         <td>{{ $item->mobile }}</td>
  
                                         <td>
-                                            <a href="{{ url('/students/' . $item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/students/' . $item->id . '/edit') }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/teachers/' . $item->id) }}" title="View Teacher"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/teachers/' . $item->id . '/edit') }}" title="Edit Teacher"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
  
-                                            <form method="POST" action="{{ url('/students' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <form method="POST" action="{{ url('/teachers' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Student" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Teacher" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
                                     </tr>
