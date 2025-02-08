@@ -28,7 +28,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($courses as $item)
+                                @foreach($enrollments as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->enroll_no }}</td>

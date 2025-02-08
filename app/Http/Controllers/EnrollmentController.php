@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
+
 class EnrollmentController extends Controller
 {
     /**
@@ -15,7 +16,7 @@ class EnrollmentController extends Controller
      */
     public function index():View
     {
-        $enrollments = Batch::all();
+        $enrollments = Enrollment::all();
         return view('enrollments.index')->with('enrollments', $enrollments); 
     }
 
