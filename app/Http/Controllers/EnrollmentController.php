@@ -35,6 +35,7 @@ class EnrollmentController extends Controller
     {
         $input = $request->all();
         Enrollment::create($input); 
+        
         return redirect('enrollments')->with('flash_message', 'Enrollment Added!');
     }
 
@@ -61,10 +62,8 @@ class EnrollmentController extends Controller
      */
     public function update(Request $request, string $id):RedirectResponse
     {
-        $enrollment = Enrollment::find($id);
-        $input = $request->all();
-        $enrollment->update($input);
-        return redirect('enrollments')->with('flash_message', 'Enrollment Updated!');
+        $enrollment = Enrollment::find($id); 
+        return view('enrollments.edit')->with('enrollment', $enrollment);
     }
 
     /**

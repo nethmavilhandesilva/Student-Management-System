@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Course extends Model
 {
@@ -13,4 +14,10 @@ class Course extends Model
           'syllabus',
           'duration',
       ];
+      use HasFactory;
+      
+      public function duration(){
+        return $this->duration ."Months";
+      }
+      
 }
