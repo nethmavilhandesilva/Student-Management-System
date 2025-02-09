@@ -13,8 +13,8 @@
         <label>Name</label></br>
         <input type="text" name="name" id="name" value="{{$batch->name}}" class="form-control"></br>
         
-        <label>Course_ID</label></br>
-        <input type="text" name="course_id" id="course_id" value="{{$batch->course_id}}" class="form-control"></br>
+        <label>Course</label></br>
+        <input type="text" name="course_id" id="course_id" value="{{$batch->course->name}}" class="form-control"></br>
         
         <label>Start_Date</label></br>
         <input type="text" name="start_date" id="start_date" value="{{$batch->start_date}}" class="form-control"></br>
